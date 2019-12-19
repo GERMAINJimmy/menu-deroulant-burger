@@ -1,0 +1,96 @@
+/*MENU*/
+.menu
+{
+    background-color: steelblue;
+    width: 100%;
+}
+nav{
+    margin-top: 90px;
+    width: 100%;
+    color: white;
+}
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+nav > ul
+{
+
+    margin: 0px;
+    padding: 0px;
+}
+nav > ul::after /*clear fix*/
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+nav li{
+    list-style: none;
+}
+nav > ul > li{
+    float:left;
+    position: relative;
+}nav > ul > li >a {
+    padding: 20px 30px;
+}
+nav li:hover .subMenu{
+    color: white;
+    background-color: steelblue;
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+.menu a:hover{
+    background-color: white;
+    color: steelblue;
+}
+.subMenu{
+    display: none;
+}
+.subMenu li a{
+    padding: 15px 30px;
+    border-top: 1px solid white;
+    font-size: 13px;
+    color: white;
+    width: 270px;
+}
+/*masquer le declenchement responsive*/
+nav input[type=checkbox]{
+    display: none;
+}
+nav label{
+    display: none;
+}
+nav input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+
+/*media menu burger*/
+@media screen and (max-width:780px){
+    .menu-mobile{
+        display: block;
+        color: steelblue;
+        background: white;
+        text-align: center;
+        padding: 12px 0px;
+    }
+    nav ul{
+        display:none;
+    }
+    nav ul li, nav ul li a{
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a, nav ul li:hover a{
+        padding: 10px 0px;
+    }
+    nav li:hover .subMenu{
+        display: block;
+        position: static;
+    }
+}
